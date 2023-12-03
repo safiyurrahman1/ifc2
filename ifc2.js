@@ -1060,8 +1060,8 @@ let IFC2 = {
       IFC2.log(message.toString(),IFC2.INFO);
       let data = JSON.parse(message.toString());
       let regex = /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]/;
-      for (key in data.Addresses) {
-        let ip = data.Addresses[key];
+      for (key in data.addresses) {
+        let ip = data.addresses[key];
         IFC2.log("Found IF on: " + ip,IFC2.INFO);
         if (ip.match(regex)) { // only match IPv4 addresses for now
           IFC2.infiniteFlight.serverAddress = ip;
